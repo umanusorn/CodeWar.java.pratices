@@ -16,18 +16,35 @@ public class VowelCountTest {
 
  final String CLASS_NAME = new Object() {
   }.getClass().getName();
-
+  String testString="";
 @Test
 public void mainTest ()  {
-//TODO: Test goes here...
 final String METHOD_NAME = new Object() {
     }.getClass().getEnclosingMethod().getName();
     String testName = CLASS_NAME + "/" + METHOD_NAME + "\n";
 
-  String testString =  "abracadabra";
+  testString =  "abracadabra";
 	assertEquals(testName+testString, 5, VowelCount.main( testString ));
 
-} 
+  testString =  "aeiou";
+	assertEquals(testName+testString, 5, VowelCount.main( testString ));
 
+   testString =  "aaa aaa";
+	assertEquals(testName+testString, 6, VowelCount.main( testString ));
+
+}
+
+  @Test
+  public void zeroVowelTest(){
+
+    final String METHOD_NAME = new Object() {
+    }.getClass().getEnclosingMethod().getName();
+    String testName = CLASS_NAME + "/" + METHOD_NAME + "\n";
+
+    testString =  "bbbbbbbbbb";
+    assertEquals(testName+testString, 0, VowelCount.main( testString ));
+    testString =  "";
+    assertEquals(testName+testString, 0, VowelCount.main( testString ));
+  }
 
 } 
