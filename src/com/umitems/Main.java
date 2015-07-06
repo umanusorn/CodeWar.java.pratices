@@ -6,7 +6,8 @@ class Main {
 public static
 void main ( String[] args ) {
 	// write your code here
-	System.out.print ( "ssss" );
+	System.out.print ( "enterMain\n" );
+	CollatzConjectureLength.genCollatz();
 }
 
 public static
