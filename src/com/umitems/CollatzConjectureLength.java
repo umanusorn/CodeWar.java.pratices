@@ -15,16 +15,15 @@ public class CollatzConjectureLength {
     System.out.print("1");
     for (int index = 2; index < MAX_NUM; index++) {
       myList[index] = conjecture(index);
-      //System.out.println(index+"\t"+myList[index]);
-
       System.out.print("," + myList[index]);
     }
 
   }
 
   public static long conjecture(long x) {
-    long count = 0;
 
+//if the number is already in the pre_process then answer otherwise find the answer
+    long count = 0;
     while (x > 2998) {
       if (x % 2 == 0)
         x /= 2;
