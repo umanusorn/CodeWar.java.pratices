@@ -2,6 +2,7 @@ package com.umitems;
 
 /**
  * Created by um2015 on 7/6/2015.
+ * http://www.codewars.com/kata/54fb963d3fe32351f2000102
  */
 public class CollatzConjectureLength {
 
@@ -21,8 +22,7 @@ public class CollatzConjectureLength {
   }
 
   public static long conjecture(long x) {
-
-//if the number is already in the pre_process then answer otherwise find the answer
+    //if the number is already in the pre_process then answer otherwise find the answer
     long count = 0;
     while (x > 2998) {
       if (x % 2 == 0)
@@ -31,7 +31,6 @@ public class CollatzConjectureLength {
         x = x * 3 + 1;
       count++;
     }
-
     return PRE_PROCESS[(int) x - 1] + count;
   }
 }

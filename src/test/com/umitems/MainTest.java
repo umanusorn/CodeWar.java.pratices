@@ -7,13 +7,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * Main Tester.
- *
- * @author <Authors name>
- * @version 1.0
- * @since <pre>Jul 4, 2015</pre>
- */
 public class MainTest {
 
   final String CLASS_NAME = new Object() {
