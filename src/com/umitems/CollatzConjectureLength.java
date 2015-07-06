@@ -15,13 +15,13 @@ public class CollatzConjectureLength {
 
     System.out.print("1");
     for (int index = 2; index < MAX_NUM; index++) {
-      myList[index] = conjecture(index);
+      myList[index] = main(index);
       System.out.print("," + myList[index]);
     }
 
   }
 
-  public static long conjecture(long x) {
+  public static long main(long x) {
     //if the number is already in the pre_process then answer otherwise find the answer
     long count = 0;
     while (x > 2998) {
@@ -29,8 +29,10 @@ public class CollatzConjectureLength {
         x /= 2;
       else
         x = x * 3 + 1;
-      count++;
+    count++;
     }
+    if(x<=1)
+      return 1;
     return PRE_PROCESS[(int) x - 1] + count;
   }
 }
