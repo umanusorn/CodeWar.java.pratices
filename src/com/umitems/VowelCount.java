@@ -1,7 +1,7 @@
 package com.umitems;
 /**
  * Created by um2015 on 7/5/2015.
- * http://www.codewars.com/kata/54ff3102c1bad923760001f3
+ *http://www.codewars.com/kata/vowel-count
  */
 public
 class VowelCount {
@@ -14,8 +14,6 @@ class VowelCount {
 
 		return vowelsCount;
 	}
-
-
 
 	public static boolean isVowel(char unKnownChar){
 		switch(unKnownChar){

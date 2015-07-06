@@ -2,7 +2,7 @@ package com.umitems;
 
 /**
  * Created by um2015 on 7/6/2015.
- * http://www.codewars.com/kata/54fb963d3fe32351f2000102
+ * http://www.codewars.com/kata/collatz-conjecture-length
  */
 public class CollatzConjectureLength {
 
