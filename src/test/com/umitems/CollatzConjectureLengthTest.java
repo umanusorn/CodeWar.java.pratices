@@ -1,7 +1,9 @@
 package test.com.umitems;
 
 import com.umitems.CollatzConjectureLength;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.TestName;
 
 import static org.junit.Assert.assertEquals;
 
@@ -14,16 +16,14 @@ public class CollatzConjectureLengthTest {
 
   int input;
   int output;
-  
+  @Rule
+  public TestName name = new TestName();
   @Test
   public void testWith1() {
-
-    final String METHOD_NAME = new Object() {
-    }.getClass().getEnclosingMethod().getName();
-    String testName = CLASS_NAME + "/" + METHOD_NAME + "\n";
+    String testName = CLASS_NAME + "/" + name.getMethodName() + "\n";
 
     input =1;
-    output=1;
+    output=3;
     assertEquals(testName+ConstTest.GIVE+ input+ConstTest.SHOULD_B+output, output, CollatzConjectureLength.main(1));
     input =2;
     output=2;
@@ -43,10 +43,7 @@ public class CollatzConjectureLengthTest {
 
   @Test
   public void bigNumTest() {
-
-    final String METHOD_NAME = new Object() {
-    }.getClass().getEnclosingMethod().getName();
-    String testName = CLASS_NAME + "/" + METHOD_NAME + "\n the input is";
+    String testName = CLASS_NAME + "/" +name.getMethodName() + "\n the input is";
     long bigNumber = 0;
     long outputl;
 
@@ -74,9 +71,7 @@ public class CollatzConjectureLengthTest {
 
   @Test
   public void randomTest(){
-    final String METHOD_NAME = new Object() {
-    }.getClass().getEnclosingMethod().getName();
-    String testName = CLASS_NAME + "/" + METHOD_NAME + "\n";
+    String testName = CLASS_NAME + "/" + name.getMethodName()+ "\n";
     final long INIT_17DIGIT = 100000000000000000L;
 
     for(int i = 0; i < 20; i++) {

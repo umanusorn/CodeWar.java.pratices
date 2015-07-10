@@ -1,7 +1,9 @@
 package test.com.umitems;
 
 import com.umitems.VowelCount;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.TestName;
 
 import static org.junit.Assert.assertEquals;
 
@@ -18,12 +20,13 @@ public class VowelCountTest {
   }.getClass().getName();
   String input ="";
   int output;
+  @Rule
+  public TestName name = new TestName();
 
-@Test
+  @Test
 public void mainTest ()  {
-final String METHOD_NAME = new Object() {
-    }.getClass().getEnclosingMethod().getName();
-    String testName = CLASS_NAME + "/" + METHOD_NAME + "\n";
+
+    String testName = CLASS_NAME + "/" + name.getMethodName() + "\n";
 
   input =  "abracadabra";
   output = 5;
@@ -41,10 +44,7 @@ final String METHOD_NAME = new Object() {
 
   @Test
   public void zeroVowelTest(){
-
-    final String METHOD_NAME = new Object() {
-    }.getClass().getEnclosingMethod().getName();
-    String testName = CLASS_NAME + "/" + METHOD_NAME + "\n";
+    String testName = CLASS_NAME + "/" + name.getMethodName() + "\n";
 
     input =  "bbbbbbbbbb";
     output = 0;
