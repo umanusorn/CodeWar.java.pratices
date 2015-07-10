@@ -12,6 +12,11 @@ public class TemplateTest {
   final String CLASS_NAME = new Object() {
   }.getClass().getName();
 
+  int input1,input2;
+  int output;
+  final static String GIVE = "give";
+  final static String SHOULD_B ="should be";
+
   @Test
   public void mainTest() {
 
@@ -19,7 +24,11 @@ public class TemplateTest {
     }.getClass().getEnclosingMethod().getName();
     String testName = CLASS_NAME + "/" + METHOD_NAME + "\n";
 
-    assertEquals(testName + "1+2=3", Main.plus(1,2), 3);
+    input1=1;
+    input2=2;
+    output=3;
+
+    assertEquals(testName + GIVE +input1+","+input2+SHOULD_B+output, Main.plus(input1, input2), output);
 
   }
 
