@@ -11,8 +11,6 @@ public class MainTest {
 
   int input1,input2;
   int output;
-  final static String GIVE = "give";
-  final static String SHOULD_B ="should be";
 
   @Test
   public void testPositive1() {
@@ -24,7 +22,7 @@ public class MainTest {
     input2=2;
     output=3;
 
-    assertEquals(testName + GIVE+input1+","+input2+SHOULD_B+output, Main.plus(input1, input2), output);
+    assertEquals(testName + ConstTest.GIVE+input1+","+input2+ConstTest.SHOULD_B+output, Main.plus(input1, input2), output);
 
   }
 
@@ -38,7 +36,7 @@ public class MainTest {
     input2=1234;
     output=2345;
 
-    assertEquals(testName + GIVE+input1+","+input2+SHOULD_B+output, Main.plus(input1, input2), output);
+    assertEquals(testName + ConstTest.GIVE+input1+","+input2+ConstTest.SHOULD_B+output, Main.plus(input1, input2), output);
   }
 
   @Test
@@ -51,7 +49,7 @@ public class MainTest {
     input2=1;
     output=0;
 
-    assertEquals(testName + GIVE+input1+","+input2+SHOULD_B+output, Main.plus(input1, input2), output);
+    assertEquals(testName + ConstTest.GIVE+input1+","+input2+ConstTest.SHOULD_B+output, Main.plus(input1, input2), output);
   }
 
   @Test
@@ -64,7 +62,7 @@ public class MainTest {
     input2=-1010;
     output=-2121;
 
-    assertEquals(testName + GIVE+input1+","+input2+SHOULD_B+output, Main.plus(input1, input2), output);
+    assertEquals(testName + ConstTest.GIVE+input1+","+input2+ConstTest.SHOULD_B+output, Main.plus(input1, input2), output);
   }
 
 } 

@@ -14,8 +14,6 @@ public class CollatzConjectureLengthTest {
 
   int input;
   int output;
-  final static String GIVE = "give";
-  final static String SHOULD_B ="should be";
   
   @Test
   public void testWith1() {
@@ -26,19 +24,19 @@ public class CollatzConjectureLengthTest {
 
     input =1;
     output=1;
-    assertEquals(testName+GIVE+ input+SHOULD_B+output, output, CollatzConjectureLength.main(1));
+    assertEquals(testName+ConstTest.GIVE+ input+ConstTest.SHOULD_B+output, output, CollatzConjectureLength.main(1));
     input =2;
     output=2;
-    assertEquals(testName+GIVE+ input+SHOULD_B+output, output, CollatzConjectureLength.main(2));
+    assertEquals(testName+ConstTest.GIVE+ input+ConstTest.SHOULD_B+output, output, CollatzConjectureLength.main(2));
     input =3;
     output=8;
-    assertEquals(testName+GIVE+ input+SHOULD_B+output, output, CollatzConjectureLength.main(3));
+    assertEquals(testName+ConstTest.GIVE+ input+ConstTest.SHOULD_B+output, output, CollatzConjectureLength.main(3));
     input =4;
     output=3;
-    assertEquals(testName+GIVE+ input+SHOULD_B+output, output, CollatzConjectureLength.main(4));
+    assertEquals(testName+ConstTest.GIVE+ input+ConstTest.SHOULD_B+output, output, CollatzConjectureLength.main(4));
     input =5;
     output=6;
-    assertEquals(testName+GIVE+ input+SHOULD_B+output, output, CollatzConjectureLength.main(5));
+    assertEquals(testName+ConstTest.GIVE+ input+ConstTest.SHOULD_B+output, output, CollatzConjectureLength.main(5));
   }
 
 
@@ -54,23 +52,23 @@ public class CollatzConjectureLengthTest {
 
     bigNumber = 123456789l;
     outputl =  conjecture(bigNumber);
-    assertEquals(testName+GIVE+bigNumber+SHOULD_B+outputl, outputl, CollatzConjectureLength.main(bigNumber));
+    assertEquals(testName+ConstTest.GIVE+bigNumber+ConstTest.SHOULD_B+outputl, outputl, CollatzConjectureLength.main(bigNumber));
     bigNumber = 110101010101l;
     outputl =  conjecture(bigNumber);
-    assertEquals(testName+GIVE+bigNumber+SHOULD_B+outputl, outputl, CollatzConjectureLength.main(bigNumber));
+    assertEquals(testName+ConstTest.GIVE+bigNumber+ConstTest.SHOULD_B+outputl, outputl, CollatzConjectureLength.main(bigNumber));
     bigNumber = 987654321123456789l;
     outputl =  conjecture(bigNumber);
-    assertEquals(testName+GIVE+bigNumber+SHOULD_B+outputl, outputl, CollatzConjectureLength.main(bigNumber));
+    assertEquals(testName+ConstTest.GIVE+bigNumber+ConstTest.SHOULD_B+outputl, outputl, CollatzConjectureLength.main(bigNumber));
     bigNumber = 1000000000000000000l;
     outputl =  conjecture(bigNumber);
-    assertEquals(testName+GIVE+bigNumber+SHOULD_B+outputl, outputl, CollatzConjectureLength.main(bigNumber));
+    assertEquals(testName+ConstTest.GIVE+bigNumber+ConstTest.SHOULD_B+outputl, outputl, CollatzConjectureLength.main(bigNumber));
     bigNumber = 1111111111111111111l;
     outputl =  conjecture(bigNumber);
-    assertEquals(testName+GIVE+bigNumber+SHOULD_B+outputl, outputl, CollatzConjectureLength.main(bigNumber));
+    assertEquals(testName+ConstTest.GIVE+bigNumber+ConstTest.SHOULD_B+outputl, outputl, CollatzConjectureLength.main(bigNumber));
 
     /*bigNumber = Long.MAX_VALUE; error i think it's because of solution's code :P
     outputl =  conjecture(bigNumber);
-    assertEquals(testName+GIVE+bigNumber+SHOULD_B+outputl, outputl, CollatzConjectureLength.main(bigNumber));*/
+    assertEquals(testName+ConstTest.GIVE+bigNumber+ConstTest.SHOULD_B+outputl, outputl, CollatzConjectureLength.main(bigNumber));*/
 
   }
 
@@ -84,7 +82,7 @@ public class CollatzConjectureLengthTest {
     for(int i = 0; i < 20; i++) {
       long rand17Digit = (long) Math.floor(Math.random() * (INIT_17DIGIT));
       long outputl = conjecture(rand17Digit);
-      assertEquals(testName+GIVE+rand17Digit+SHOULD_B+outputl,outputl, CollatzConjectureLength.main(rand17Digit)) ;
+      assertEquals(testName+ConstTest.GIVE+rand17Digit+ConstTest.SHOULD_B+outputl,outputl, CollatzConjectureLength.main(rand17Digit)) ;
     }
 
     //the solution test case goes with long rand = (long) Math.floor(Math.random() * (1000000000000000L - 1000000L) + 1000000L);

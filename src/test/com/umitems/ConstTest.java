@@ -8,14 +8,14 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by um2015 on 7/6/2015.
  */
-public class TemplateTest {
+public class ConstTest {
   final String CLASS_NAME = new Object() {
   }.getClass().getName();
 
   int input1,input2;
   int output;
-  final static String GIVE = "give";
-  final static String SHOULD_B ="should be";
+  public final static String GIVE = " give ";
+  public final static String SHOULD_B =" should be ";
 
   @Test
   public void mainTest() {
