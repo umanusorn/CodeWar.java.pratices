@@ -24,7 +24,6 @@ public class CollatzConjectureLengthTest {
     }.getClass().getEnclosingMethod().getName();
     String testName = CLASS_NAME + "/" + METHOD_NAME + "\n";
 
-    
     input =1;
     output=1;
     assertEquals(testName+GIVE+ input+SHOULD_B+output, output, CollatzConjectureLength.main(1));
@@ -56,8 +55,6 @@ public class CollatzConjectureLengthTest {
     bigNumber = 123456789l;
     outputl =  conjecture(bigNumber);
     assertEquals(testName+GIVE+bigNumber+SHOULD_B+outputl, outputl, CollatzConjectureLength.main(bigNumber));
-    //bigNumber = Long.MAX_VALUE; error
-    //assertEquals(testName+bigNumber, CollatzConjectureLength.main(bigNumber), conjecture(bigNumber));
     bigNumber = 110101010101l;
     outputl =  conjecture(bigNumber);
     assertEquals(testName+GIVE+bigNumber+SHOULD_B+outputl, outputl, CollatzConjectureLength.main(bigNumber));
@@ -71,6 +68,10 @@ public class CollatzConjectureLengthTest {
     outputl =  conjecture(bigNumber);
     assertEquals(testName+GIVE+bigNumber+SHOULD_B+outputl, outputl, CollatzConjectureLength.main(bigNumber));
 
+    /*bigNumber = Long.MAX_VALUE; error i think it's because of solution's code :P
+    outputl =  conjecture(bigNumber);
+    assertEquals(testName+GIVE+bigNumber+SHOULD_B+outputl, outputl, CollatzConjectureLength.main(bigNumber));*/
+
   }
 
   @Test
@@ -80,14 +81,13 @@ public class CollatzConjectureLengthTest {
     String testName = CLASS_NAME + "/" + METHOD_NAME + "\n";
 
     for(int i = 0; i < 20; i++) {
-      //the solution test case goes with long rand = (long) Math.floor(Math.random() * (1000000000000000L - 1000000L) + 1000000L);
-      // I dont understand why  1000000000000000L - 1000000L) + 1000000L why not just  1000000000000000L
       long rand = (long) Math.floor(Math.random() * (100000000000000000L));
       assertEquals("Random test failed for: " + rand, CollatzConjectureLength.main(rand), conjecture(rand));
     }
 
+    //the solution test case goes with long rand = (long) Math.floor(Math.random() * (1000000000000000L - 1000000L) + 1000000L);
+    // I dont understand why  1000000000000000L - 1000000L) + 1000000L why not just  1000000000000000L
   }
-
 
   private long conjecture(long x) {
     //this algor comes from the solution's testcase however it got 1 when input =Long.MAX_VALUE(9223372036854775807)
