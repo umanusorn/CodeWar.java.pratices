@@ -79,10 +79,12 @@ public class CollatzConjectureLengthTest {
     final String METHOD_NAME = new Object() {
     }.getClass().getEnclosingMethod().getName();
     String testName = CLASS_NAME + "/" + METHOD_NAME + "\n";
+    final long INIT_17DIGIT = 100000000000000000L;
 
     for(int i = 0; i < 20; i++) {
-      long rand = (long) Math.floor(Math.random() * (100000000000000000L));
-      assertEquals("Random test failed for: " + rand, CollatzConjectureLength.main(rand), conjecture(rand));
+      long rand17Digit = (long) Math.floor(Math.random() * (INIT_17DIGIT));
+      long outputl = conjecture(rand17Digit);
+      assertEquals(testName+GIVE+rand17Digit+SHOULD_B+outputl,outputl, CollatzConjectureLength.main(rand17Digit)) ;
     }
 
     //the solution test case goes with long rand = (long) Math.floor(Math.random() * (1000000000000000L - 1000000L) + 1000000L);
