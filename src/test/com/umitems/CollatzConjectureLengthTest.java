@@ -12,18 +12,34 @@ public class CollatzConjectureLengthTest {
   final String CLASS_NAME = new Object() {
   }.getClass().getName();
 
+  int input;
+  int output;
+  final static String GIVE = "give";
+  final static String SHOULD_B ="should be";
+  
   @Test
-  public void mainTest() {
+  public void testWith1() {
 
     final String METHOD_NAME = new Object() {
     }.getClass().getEnclosingMethod().getName();
     String testName = CLASS_NAME + "/" + METHOD_NAME + "\n";
 
-    assertEquals(testName + "when enter 1 it should be 1", CollatzConjectureLength.main(1), 1);
-    assertEquals(testName + "when enter 2 it should be 2", CollatzConjectureLength.main(2), 2);
-    assertEquals(testName + "when enter 3 it should be 8", CollatzConjectureLength.main(3), 8);
-    assertEquals(testName + "when enter 4 it should be 3", CollatzConjectureLength.main(4), 3);
-    assertEquals(testName + "when enter 5 it should be 6", CollatzConjectureLength.main(5), 6);
+    
+    input =1;
+    output=1;
+    assertEquals(testName+GIVE+ input+SHOULD_B+output, output, CollatzConjectureLength.main(1));
+    input =2;
+    output=2;
+    assertEquals(testName+GIVE+ input+SHOULD_B+output, output, CollatzConjectureLength.main(2));
+    input =3;
+    output=8;
+    assertEquals(testName+GIVE+ input+SHOULD_B+output, output, CollatzConjectureLength.main(3));
+    input =4;
+    output=3;
+    assertEquals(testName+GIVE+ input+SHOULD_B+output, output, CollatzConjectureLength.main(4));
+    input =5;
+    output=6;
+    assertEquals(testName+GIVE+ input+SHOULD_B+output, output, CollatzConjectureLength.main(5));
   }
 
 
@@ -33,23 +49,46 @@ public class CollatzConjectureLengthTest {
 
     final String METHOD_NAME = new Object() {
     }.getClass().getEnclosingMethod().getName();
-    String testName = CLASS_NAME + "/" + METHOD_NAME + "\n";
+    String testName = CLASS_NAME + "/" + METHOD_NAME + "\n the input is";
     long bigNumber = 0;
+    long outputl;
 
     bigNumber = 123456789l;
-    assertEquals(testName+bigNumber, CollatzConjectureLength.main(bigNumber), conjecture(bigNumber));
+    outputl =  conjecture(bigNumber);
+    assertEquals(testName+GIVE+bigNumber+SHOULD_B+outputl, outputl, CollatzConjectureLength.main(bigNumber));
     //bigNumber = Long.MAX_VALUE; error
     //assertEquals(testName+bigNumber, CollatzConjectureLength.main(bigNumber), conjecture(bigNumber));
     bigNumber = 110101010101l;
-    assertEquals(testName+bigNumber, CollatzConjectureLength.main(bigNumber), conjecture(bigNumber));
+    outputl =  conjecture(bigNumber);
+    assertEquals(testName+GIVE+bigNumber+SHOULD_B+outputl, outputl, CollatzConjectureLength.main(bigNumber));
     bigNumber = 987654321123456789l;
-    assertEquals(testName+bigNumber, CollatzConjectureLength.main(bigNumber), conjecture(bigNumber));
+    outputl =  conjecture(bigNumber);
+    assertEquals(testName+GIVE+bigNumber+SHOULD_B+outputl, outputl, CollatzConjectureLength.main(bigNumber));
     bigNumber = 1000000000000000000l;
-    assertEquals(testName+bigNumber, CollatzConjectureLength.main(bigNumber), conjecture(bigNumber));
+    outputl =  conjecture(bigNumber);
+    assertEquals(testName+GIVE+bigNumber+SHOULD_B+outputl, outputl, CollatzConjectureLength.main(bigNumber));
     bigNumber = 1111111111111111111l;
-    assertEquals(testName+bigNumber, CollatzConjectureLength.main(bigNumber), conjecture(bigNumber));
+    outputl =  conjecture(bigNumber);
+    assertEquals(testName+GIVE+bigNumber+SHOULD_B+outputl, outputl, CollatzConjectureLength.main(bigNumber));
 
   }
+
+  @Test
+  public void randomTest(){
+    final String METHOD_NAME = new Object() {
+    }.getClass().getEnclosingMethod().getName();
+    String testName = CLASS_NAME + "/" + METHOD_NAME + "\n";
+
+    for(int i = 0; i < 20; i++) {
+      //the solution test case goes with long rand = (long) Math.floor(Math.random() * (1000000000000000L - 1000000L) + 1000000L);
+      // I dont understand why  1000000000000000L - 1000000L) + 1000000L why not just  1000000000000000L
+      long rand = (long) Math.floor(Math.random() * (100000000000000000L));
+      assertEquals("Random test failed for: " + rand, CollatzConjectureLength.main(rand), conjecture(rand));
+    }
+
+  }
+
+
   private long conjecture(long x) {
     //this algor comes from the solution's testcase however it got 1 when input =Long.MAX_VALUE(9223372036854775807)
     //while my algor got 513

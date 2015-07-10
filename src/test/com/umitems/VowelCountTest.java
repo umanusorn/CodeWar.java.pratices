@@ -16,21 +16,27 @@ public class VowelCountTest {
 
  final String CLASS_NAME = new Object() {
   }.getClass().getName();
-  String testString="";
+  String input ="";
+  int output;
+  final static String GIVE = "give";
+  final static String SHOULD_B ="should be";
 @Test
 public void mainTest ()  {
 final String METHOD_NAME = new Object() {
     }.getClass().getEnclosingMethod().getName();
     String testName = CLASS_NAME + "/" + METHOD_NAME + "\n";
 
-  testString =  "abracadabra";
-	assertEquals(testName+testString, 5, VowelCount.main( testString ));
+  input =  "abracadabra";
+  output = 5;
+	assertEquals(testName+GIVE+ input+SHOULD_B+output, output, VowelCount.main(input));
 
-  testString =  "aeiou";
-	assertEquals(testName+testString, 5, VowelCount.main( testString ));
+  input =  "aeiou";
+  output = 5;
+  assertEquals(testName+GIVE+ input+SHOULD_B+output, output, VowelCount.main(input));
 
-   testString =  "aaa aaa";
-	assertEquals(testName+testString, 6, VowelCount.main( testString ));
+   input =  "aaa aaa";
+  output = 6;
+  assertEquals(testName+GIVE+ input+SHOULD_B+output, output, VowelCount.main(input));
 
 }
 
@@ -41,10 +47,12 @@ final String METHOD_NAME = new Object() {
     }.getClass().getEnclosingMethod().getName();
     String testName = CLASS_NAME + "/" + METHOD_NAME + "\n";
 
-    testString =  "bbbbbbbbbb";
-    assertEquals(testName+testString, 0, VowelCount.main( testString ));
-    testString =  "";
-    assertEquals(testName+testString, 0, VowelCount.main( testString ));
+    input =  "bbbbbbbbbb";
+    output = 0;
+    assertEquals(testName+GIVE+ input+SHOULD_B+output, output, VowelCount.main(input));
+    input =  "";
+    output = 0;
+    assertEquals(testName+GIVE+ input+SHOULD_B+output, output, VowelCount.main(input));
   }
 
 } 
