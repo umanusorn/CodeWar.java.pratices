@@ -24,7 +24,7 @@ public class VowelCountTest {
   public TestName name = new TestName();
 
   @Test
-public void mainTest ()  {
+public void main ()  {
 
     String testName = CLASS_NAME + "/" + name.getMethodName() + "\n";
 
@@ -43,7 +43,7 @@ public void mainTest ()  {
 }
 
   @Test
-  public void zeroVowelTest(){
+  public void zeroVowel(){
     String testName = CLASS_NAME + "/" + name.getMethodName() + "\n";
 
     input =  "bbbbbbbbbb";

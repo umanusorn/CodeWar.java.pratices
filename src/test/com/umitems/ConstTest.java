@@ -21,7 +21,7 @@ public class ConstTest {
   int output;
 
   @Test
-  public void mainTest() {
+  public void give1And2ShouldB3() {
     String testName = CLASS_NAME + "/" + name.getMethodName() + "\n";
 
     input1 = 1;
